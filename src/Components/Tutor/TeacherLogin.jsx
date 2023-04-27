@@ -10,14 +10,13 @@ import { setTutor } from "../../Store/Slice/tutorSlice";
 
 function TeacherLogin() {
   const [user, setUser] = useState(" ");
+  alert(process.env.REACT_APP_GOOGLE_CLIENT_ID);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const googleAuth = async (datas) => {
    
     setUser(datas);
-   
-
     await axios.post("/googleAuth", { datas }).then((res) => {
     
       if (res.data.status) {
