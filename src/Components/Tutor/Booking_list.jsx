@@ -37,6 +37,7 @@ function Booking_list() {
 
       console.log(studentId);
       socket.emit("room:joinchat",studentId)
+      console.log(111111111111111);
       dispatch(
         setStudentId({
           studentId:studentId
