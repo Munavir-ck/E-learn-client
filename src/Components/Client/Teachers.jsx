@@ -436,8 +436,8 @@ const stars=[1,2,3,4,5]
                         <img
                           className="w-full h-5/4"
                           src={
-                            teachers.image
-                              ? teachers.image
+                            items.image
+                              ? items.image
                               : "../../../avatar.png"
                           }
                           alt="Sunset in the mountains"
