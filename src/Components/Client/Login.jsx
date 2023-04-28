@@ -85,7 +85,7 @@ function Login() {
     }
   };
   const validate = (values) => {
-    console.log(formErrors);
+   
     const errors = {};
     const regex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;

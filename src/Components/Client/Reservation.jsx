@@ -111,7 +111,7 @@ function Reservation() {
         )
         .then((res) => {
           if (res.data.status) {
-            console.log(res.data);
+          
 
             setFiltersSlot(res.data.result[0].slots);
           } else {

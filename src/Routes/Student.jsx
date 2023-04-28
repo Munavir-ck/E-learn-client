@@ -21,6 +21,8 @@ function Student() {
 
   alert( isAuth,"token")
 
+  alert( "token")
+
   console.log(isAuth);
   return (
     <>

@@ -54,8 +54,7 @@ function Booking() {
   };
 
   useEffect(() => {
-    console.log('iam useeffect');
-    console.log(checkedValues,2323232323232323);
+   
     axios
       .post(
         `/filter_our_teacher`,
@@ -65,7 +64,7 @@ function Booking() {
       .then((res) => {
         // console.log(res.data);
         if (res.data.status) {
-          console.log(res.data.result,'filtersed teacher');
+        
           setFilter(true)
           setFilteredTeachers(res.data.result);
         } else {
@@ -110,7 +109,7 @@ function Booking() {
         }
       )
       .then((res) => {
-        console.log(res.data, 2222222);
+      
         if (res.data.status) {
           setSubject(res.data.result);
         } else {
