@@ -35,7 +35,7 @@ function Login() {
           console.log(data);
         })
         .catch((err) => {
-          console.log(err, 22222222);
+        
         });
     });
   };

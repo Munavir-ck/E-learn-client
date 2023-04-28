@@ -19,6 +19,8 @@ function Student() {
 
   const isAuth=localStorage.getItem("token")
 
+  alert( isAuth,"token")
+
   console.log(isAuth);
   return (
     <>
