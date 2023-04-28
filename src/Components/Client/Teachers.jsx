@@ -28,6 +28,8 @@ function Booking() {
   const [teachers, setTeachers] = useState([]);
   const [error, setError] = useState(" ");
   const [subject, setSubject] = useState([]);
+  const[filter,setFilter]=useState(false)
+
  const [filterdTeachers,setFilteredTeachers]=useState([])
 
   const student_id = useSelector((state) => state.student._id);
@@ -64,6 +66,7 @@ function Booking() {
         // console.log(res.data);
         if (res.data.status) {
           console.log(res.data.result,'filtersed teacher');
+          setFilter(true)
           setFilteredTeachers(res.data.result);
         } else {
           setTeachers([]);
