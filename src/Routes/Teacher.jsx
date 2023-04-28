@@ -13,7 +13,7 @@ import ErrorPage from '../Components/Admin/ErrorPage/ErrorPage';
 function Teacher() {
   const teacherToken = localStorage.getItem("tutortoken");
 
-
+alert(teacherToken)
   return (
     <>
       <Routes>
