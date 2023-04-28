@@ -48,6 +48,7 @@ function Booking_list() {
     console.log(232323232323);
     
     const handlejoinChatRoom=(data)=>{
+      console.log("socket emitted");
       navigate(`/chat_room_tutor/${data}`)
        }
 
