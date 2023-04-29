@@ -22,12 +22,12 @@ useEffect(()=>{
       <Routes>
         <Route  path="/" element={ <TeacherLogin />} />
 
-        <Route path="/home" element={teacherToken?<TutorHome />:<Navigate to={"/tutor"}/>} />
-        <Route  path="/profile" element={teacherToken?<TutorProfilePage />:<Navigate to={"/tutor"}/> } />
+        <Route path="/home" element={<TutorHome />} />
+        <Route  path="/profile" element={<TutorProfilePage /> } />
 
-        <Route path="/manage_time" element={teacherToken? <Time_managePage />:<Navigate to={"/tutor"}/>} />
-        <Route path="/booking_list" element={teacherToken?<BookingList_page />:<Navigate to={"/tutor"}/>} />
-        <Route path="/chat_room_tutor/:id" element={teacherToken?<ChatRoomTutorPage />:<Navigate to={"/tutor"}/>} />
+        <Route path="/manage_time" element={ <Time_managePage />} />
+        <Route path="/booking_list" element={<BookingList_page />} />
+        <Route path="/chat_room_tutor/:id" element={<ChatRoomTutorPage />} />
         <Route path="/*"  element={<ErrorPage link={"/tutor/home"} />} />
       </Routes>
     </>

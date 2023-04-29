@@ -37,13 +37,13 @@ function Student() {
         <Route path="/teachers" element={<TeachersPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={ <Signup />} />
-        <Route path="/book_teacher" element={isAuth?<Book_teachers /> :<Navigate to={"/login"}/>} />
-        <Route path="/profile" element={isAuth?<Profile_page />:<Navigate to={"/login"}/>} />
+        <Route path="/book_teacher" element={<Book_teachers /> } />
+        <Route path="/profile" element={<Profile_page />} />
         <Route path="/teacher_details/:id" element={<TeacherDetailPage />} />
-        <Route path="/reservation/:id" element={isAuth?<ReservationPage />:<Navigate to={"/login"}/>} />
-        <Route path="/list_booking" element={isAuth?<List_booking_page />:<Navigate to={"/login"}/>}/>
-        <Route path="/room/:roomId" element={isAuth?<RoomPage />:<Navigate to={"/login"}/>} />
-        <Route path="/chat_room/:id" element={isAuth?<ChatPage />:<Navigate to={"/login"}/>} />
+        <Route path="/reservation/:id" element={<ReservationPage />} />
+        <Route path="/list_booking" element={<List_booking_page />}/>
+        <Route path="/room/:roomId" element={<RoomPage />} />
+        <Route path="/chat_room/:id" element={<ChatPage />} />
         <Route path="/*" element={<ErrorPage/>} />
       </Routes>
     </>
