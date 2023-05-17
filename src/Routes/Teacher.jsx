@@ -6,7 +6,7 @@ import TutorProfilePage from "../pages/Tutor/TutorProfilePage";
 import Time_managePage from "../pages/Tutor/Time_managePage";
 import BookingList_page from "../pages/Tutor/BookingList_page";
 import ChatRoomTutorPage from "../pages/Tutor/ChatRoomPage";
-import RoomPage from "../Components/screen/Room";
+
 import ErrorPage from '../Components/Admin/ErrorPage/ErrorPage';
 import RoomPage from "../Components/screen/Room";
 import { useSelector } from 'react-redux'

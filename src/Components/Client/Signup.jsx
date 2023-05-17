@@ -225,14 +225,14 @@ const Signup = () => {
                           type="tel"
                         />
 
-                        <button
+                        <div
                           onClick={handleOtp}
                           tabindex="-1"
                           for="show_more"
                           class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-blue-600"
                         >
                           OTP
-                        </button>
+                        </div>
                       </div>
                       {otp && formValues.phone ? (
                         <div className="relative">
