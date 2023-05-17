@@ -39,7 +39,7 @@ const isAuth = useSelector(state => state.student.token);
         <Route path="/teacher_details/:id" element={<TeacherDetailPage />} />
         <Route path="/reservation/:id" element={isAuth?<ReservationPage />:<Navigate to={"/login"}/>} />
         <Route path="/list_booking" element={isAuth?<List_booking_page />:<Navigate to={"/login"}/>}/>
-        <Route path="/room/:roomId" element={isAuth?<RoomPage />:<Navigate to={"/login"}/>} />
+        <Route path="/room/:roomId" element={<RoomPage />} />
         <Route path="/chat_room/:id" element={isAuth?<ChatPage />:<Navigate to={"/login"}/>} />
         <Route path="/*" element={<ErrorPage/>} />
       </Routes>
