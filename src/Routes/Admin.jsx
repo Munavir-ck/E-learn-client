@@ -27,12 +27,12 @@ function Admin() {
     <div>
        <Routes>
       <Route  path='/' element={<AdminLogin/>}/>
-      <Route path='/home' element={<AdminHome/>}/>
-      <Route path='/addTeachers' element={<AddTeacher/>}/>
-      <Route path='/teachers' element={<TeachersList/>}/>
-      <Route path='/uploadclass' element={<Upload/>}/>
-      <Route path='/add_subject' element={<Add_subjectPage/>}/>
-      <Route path='/transactions' element={<Transaction_page/>}/>
+      <Route path='/home' element={isAuth?<AdminHome/>:<Navigate to={'/admin/'} />}/>
+      <Route path='/addTeachers' element={isAuth?<AddTeacher/>:<Navigate to={'/admin/'} />}/>
+      <Route path='/teachers' element={isAuth?<TeachersList/>:<Navigate to={'/admin/'} />}/>
+      <Route path='/uploadclass' element={isAuth?<Upload/>:<Navigate to={'/admin/'} />}/>
+      <Route path='/add_subject' element={isAuth?<Add_subjectPage/>:<Navigate to={'/admin/'} />}/>
+      <Route path='/transactions' element={isAuth?<Transaction_page/>:<Navigate to={'/admin/'} />}/>
       <Route path="/*"  element={<ErrorPage link={"/admin/home"} />} />
       </Routes>
     </div>
