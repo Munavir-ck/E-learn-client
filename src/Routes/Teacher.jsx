@@ -27,6 +27,7 @@ function Teacher() {
 
         <Route path="/manage_time" element={teacherToken? <Time_managePage />:<Navigate to={"/tutor"}/>} />
         <Route path="/booking_list" element={teacherToken?<BookingList_page />:<Navigate to={"/tutor"}/>} />
+        <Route path="/chat_room/:id" element={ teacherToken?<ChatPage />:<Navigate to={"/tutor"}/>} />
         <Route path="/chat_room_tutor/:id" element={teacherToken?<ChatRoomTutorPage />:<Navigate to={"/tutor"}/>} />
         <Route path="/*"  element={<ErrorPage link={"/tutor/home"} />} />
       </Routes>
