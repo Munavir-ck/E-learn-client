@@ -37,7 +37,7 @@ function Booking_list() {
 
       console.log(studentId);
       socket.emit("room:joinchat",studentId)
-      console.log(111111111111111);
+     
       dispatch(
         setStudentId({
           studentId:studentId
@@ -45,7 +45,6 @@ function Booking_list() {
       )
     }
      
-    console.log(232323232323);
     
     const handlejoinChatRoom=(data)=>{
       console.log("socket emitted");
