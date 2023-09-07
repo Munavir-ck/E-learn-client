@@ -71,7 +71,7 @@ function Booking() {
       setTeachers(response.data.data);
     } else {
       setTeachers([]);
-      setError(res.data.message);
+      setError(response.data.status);
     }
   };
 
