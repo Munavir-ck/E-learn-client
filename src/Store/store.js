@@ -4,7 +4,7 @@ import { tutorReducer } from "./Slice/tutorSlice";
 import { roomReducer } from "./Slice/socketSlice"; 
 import {teacherReducer} from  "./Slice/teacherSlice"
 import { studentIdReducer } from "./Slice/studentIdSlice";
-import {adminReducer } from "./Slice/admin_slice";
+
 
 
 import {
