@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import ModalSuccess from "./Modal/ModalSuccess";
 import Spinner from "./Spinner/Spinner";
+import { filter_slot, getReservation } from "../../API/userReq";
 
 function Reservation() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -70,15 +71,7 @@ function Reservation() {
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get("/reservation_page", {
-        params: {
-          id,
-        },
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      })
+   getReservation(id)
       .then((res) => {
         setLoading(false);
         setTeacher(res.data.result);
@@ -90,19 +83,7 @@ function Reservation() {
     const date = new Date();
     let currentDate = new Date(date.setUTCHours(0, 0, 0, 0));
     if (selectedDate >= currentDate) {
-      axios
-        .post(
-          "/filter_slot",
-          {
-            id,
-            selectedDate,
-          },
-          {
-            headers: {
-              Authorization: localStorage.getItem("token"),
-            },
-          }
-        )
+     filter_slot(id,selectedDate)
         .then((res) => {
           if (res.data.status) {
             setFiltersSlot(res.data.result[0].slots);
@@ -152,7 +133,7 @@ function Reservation() {
                       <img
                         className=" object-cover"
                         src={
-                          teacher.image ? teacher.image : "../../../avatar.png"
+                          teacher?.image ? teacher.image : "../../../avatar.png"
                         }
                         alt=""
                       />
@@ -166,22 +147,22 @@ function Reservation() {
                 <div className="max-w-md mx-auto">
                   <div className="bg-white shadow-md rounded-lg ">
                     <div className="p-6">
-                      <h2 className="text-2xl font-bold mb-4">{teacher.name}</h2>
+                      <h2 className="text-2xl font-bold mb-4">{teacher?.name}</h2>
                       <label
                         className="flex h-full cursor-pointer flex-col rounded-lg p-4 shadow-lg bg-mycolors text-white"
                         htmlFor="radio_2"
                       >
                         <h1 className="font-sans mt-2">
                          class:
-                          <span className="mt-2 font-medium ml-2">{teacher.class}</span>
+                          <span className="mt-2 font-medium ml-2">{teacher?.class}</span>
                         </h1>
                         <h1 className="font-sans mt-4">
                           Email:
-                          <span className="mt-2 font-medium ml-2">{teacher.subject}</span>
+                          <span className="mt-2 font-medium ml-2">{teacher?.subject}</span>
                         </h1>
                         <h1 className="font-sans mt-4">
                           Phone:
-                          <span className="mt-2 font-medium ml-2">{teacher.qualification}</span>
+                          <span className="mt-2 font-medium ml-2">{teacher?.qualification}</span>
                         </h1>
                       </label>
                     </div>

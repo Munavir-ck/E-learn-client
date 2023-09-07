@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { setTutor } from "../../Store/Slice/tutorSlice";
+import { login } from "../../API/tutorReq";
 
 function TeacherLogin() {
   const [user, setUser] = useState(" ");
@@ -17,10 +18,10 @@ function TeacherLogin() {
   const googleAuth = async (datas) => {
    
     setUser(datas);
-    await axios.post("/googleAuth", { datas }).then((res) => {
     
-      if (res.data.status) {
-      
+    login(datas)
+    .then((res) => {    
+      if (res.data.status) {    
         toast.success(res.data.message);
         localStorage.setItem("tutortoken", res.data.token);
        
