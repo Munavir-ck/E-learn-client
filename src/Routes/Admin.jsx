@@ -8,20 +8,20 @@ import Add_subjectPage from '../pages/Admin/Add_subjectPage';
 import Transaction_page from '../pages/Admin/Transaction_page';
 import ErrorPage from '../Components/Admin/ErrorPage/ErrorPage';
 import { Navigate } from 'react-router-dom';
-
+import { useSelector } from 'react-redux'
 import { Route,Routes} from 'react-router-dom';
 
 function Admin() {
 
-  const[isAuth,setisAuth]=useState("")
 
-  useEffect(()=>{
 
-    const isAuth=localStorage.getItem("admintoken")
-    setisAuth(isAuth)
-  },[])
 
-  
+
+    const isAuth = useSelector(state => state.admin.token);
+    
+ 
+
+
  
   return (
     <div>
