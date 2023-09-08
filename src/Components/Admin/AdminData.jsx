@@ -13,7 +13,7 @@ function AdminData() {
 
   useEffect(() => {
    
-    get_dailyReport()
+    get_dailyReport(selectedDate)
       .then((res) => {
         console.log(res.data);
         setTodayTotal(res.data.totalAmount);
