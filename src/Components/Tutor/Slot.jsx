@@ -29,7 +29,7 @@ const[slot,setSlot]=useState([])
 const [selectedData, setSelectedData] = useState({});
 
 
-console.log(selectedData,33333);
+
 
 const openModal = () => {
     setModalIsOpen(true);
@@ -46,7 +46,7 @@ useEffect(()=>{
       }
      
     }).then((res)=>{
-  console.log(res.data.result);
+
         setSlot(res.data.result)
 
     }).catch((err)=>{
@@ -58,7 +58,7 @@ useEffect(()=>{
     
 },[data])
 
-console.log(slot,111);
+
   return (
 
 
@@ -66,11 +66,11 @@ console.log(slot,111);
 
         <h1  className='font-serif font-bold'>Available Slots</h1>
 
-        {slot.map((item,i)=>{
+        {slot?.map((item,i)=>{
 
 return(
 
-<button 
+<button key={i}
 onClick={ ()=>{
     openModal();
     setSelectedData(item
@@ -78,6 +78,8 @@ onClick={ ()=>{
 }}
 className="bg-red-700 hover:bg-red-900  text-white font-bold py-2 px-4 rounded-full">
 Slot-{i+1}
+
+
 </button>
 )
 
