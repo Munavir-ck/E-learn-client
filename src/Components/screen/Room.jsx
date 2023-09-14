@@ -23,8 +23,7 @@ const RoomPage = () => {
   const studentid = useSelector(state => state.student._id)
   const teacher = useSelector(state => state.tutor.tutor_id)
 
- console.log(teacher,"teacherrrrr iddddddddd");
-  console.log(studentid,"student iddddddddd");
+ 
 
 
   const handleUserJoined = useCallback(({ email, id }) => {

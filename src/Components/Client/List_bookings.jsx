@@ -165,7 +165,7 @@ const List_bookings = () => {
           bookings.forEach((item) => {
            
             if (item._id === order_id) {
-              console.log(3232323);
+             
               if (item.slot._id === slot_id) {
                 item.slot.booking_status = "Cancelled";
               }

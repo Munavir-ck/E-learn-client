@@ -14,7 +14,7 @@ function App() {
   const handleNotification = (data) => {
     setNotification(true);
 
-    toast.success("iam waitiiiiiiiiiiiiing");
+    toast.success("waiting ");
     Notification.requestPermission().then((perm) => {
       if (perm === "granted") {
         const notification = new Notification("Incoming Video call", {

@@ -29,7 +29,7 @@ function ChatRoom() {
   
     });
   },[])
-  console.log(newMessage,"here is new message client");
+  
 
   return (
     <div className="flex h-screen antialiased text-gray-800">
